@@ -13,14 +13,14 @@
  */
 
  
-$sLangName  = "Deutsch";
+$sLangName  = "English";
 // -------------------------------
 // RESOURCE IDENTITFIER = STRING
 // -------------------------------
 $aLang = array(
     'charset'                                       => 'UTF-8',
-    'SHOP_MODULE_sGaTrackingId'                     => 'Google Analytics Trackind ID',
-    'SHOP_MODULE_blGaEcommerceTracking'             => 'Google Analytics Ecommerce Tracking aktivieren',
-    'SHOP_MODULE_sGaConversionId'                   => 'Google Conversion ID',
-    'SHOP_MODULE_sGaConversionLabel'                => 'Google Conversion Label',
+    'SHOP_MODULE_sGaTrackingId'                     => 'Google Analytics trackind ID',
+    'SHOP_MODULE_blGaEcommerceTracking'             => 'activate Google Analytics ecommerce tracking',
+    'SHOP_MODULE_sGaConversionId'                   => 'Google conversion ID',
+    'SHOP_MODULE_sGaConversionLabel'                => 'Google conversion label',
 );
