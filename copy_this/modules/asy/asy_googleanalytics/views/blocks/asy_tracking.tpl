@@ -1,6 +1,8 @@
 [{$smarty.block.parent}]
 
 [{if $oViewConf->getGaTrackingId()}]
+    [{assign var="order" value=$oView->getOrder()}]
+
     [{* Google Analytics integration *}]
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -13,7 +15,6 @@
         ga('set', 'anonymizeIp', true);
 
         [{if $oViewConf->isGaEcommerceTrackingActive() && $oViewConf->getActiveClassName() == 'thankyou'}]
-            [{assign var="order" value=$oView->getOrder()}]
             [{assign var="dTotalOrdersum" value=$order->oxorder__oxtotalbrutsum->value}]
             [{assign var="dTotalOrdersumNetto" value=$order->oxorder__oxtotalnetsum->value}]
             [{assign var="dOrderTax" value=$dTotalOrdersum-$dTotalOrdersumNetto}]
@@ -50,8 +51,8 @@
     [{if $oViewConf->getActiveClassName() == 'thankyou'}]
         [{assign var="oOrder" value=$oView->getOrder()}]
         [{assign var="dOrderSum" value=$oOrder->getTotalOrderSum()}]
-    
-        <!-- Google Code for Conversion Candle4you Conversion Page -->
+
+        <!-- Google Code for Conversion Page -->
         <script type="text/javascript">
         /* <![CDATA[ */
         var google_conversion_id = [{$oViewConf->getModuleConfig('sGaConversionId')}];
@@ -60,7 +61,7 @@
         var google_conversion_color = "ffffff";
         var google_conversion_label = "[{$oViewConf->getModuleConfig('sGaConversionLabel')}]";
         var google_conversion_value = [{$dOrderSum}];
-        var google_conversion_currency = "EUR";
+        var google_conversion_currency = "[{$order->oxorder__oxcurrency->value}]";
         var google_remarketing_only = false;
         /* ]]> */
         </script>
@@ -68,7 +69,7 @@
         </script>
         <noscript>
         <div style="display:inline;">
-        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/1069482048/?value=1.00&amp;currency_code=EUR&amp;label=NiQhCOiK6GUQwID8_QM&amp;guid=ON&amp;script=0"/>
+        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/[{$oViewConf->getModuleConfig('sGaConversionId')}]/?value=[{$dOrderSum}]&amp;currency_code=[{$order->oxorder__oxcurrency->value}]v&amp;label=[{$oViewConf->getModuleConfig('sGaConversionLabel')}]&amp;guid=ON&amp;script=0"/>
         </div>
         </noscript>
     [{/if}]
