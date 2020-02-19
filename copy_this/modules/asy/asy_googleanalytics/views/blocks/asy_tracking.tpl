@@ -69,7 +69,7 @@
         </script>
         <noscript>
         <div style="display:inline;">
-        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/[{$oViewConf->getModuleConfig('sGaConversionId')}]/?value=[{$dOrderSum}]&amp;currency_code=[{$order->oxorder__oxcurrency->value}]v&amp;label=[{$oViewConf->getModuleConfig('sGaConversionLabel')}]&amp;guid=ON&amp;script=0"/>
+        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/[{$oViewConf->getModuleConfig('sGaConversionId')}]/?value=[{$dOrderSum}]&amp;currency_code=[{$order->oxorder__oxcurrency->value}]&amp;label=[{$oViewConf->getModuleConfig('sGaConversionLabel')}]&amp;guid=ON&amp;script=0"/>
         </div>
         </noscript>
     [{/if}]
